@@ -1,0 +1,297 @@
+<!DOCTYPE html><html><head><base href="https://asmon-mold.com/formula">
+<title>Ye Olde Asmon-Mold: The Forbidden Alchemical Formula</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=MedievalSharp&family=Forum&display=swap');
+
+  body {
+    font-family: 'Forum', serif;
+    font-weight: bold;
+    background-color: #2c1b0d;
+    color: #d4bc8b;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-image: url('https://gist.githubusercontent.com/KindredPrime/4e0659a44f2af8b20090238d4d748d45/raw/b782cc65a8db7a1b228df72788a45bb7b5ad0319/Castle%2520Wall%2520Background.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+  }
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  header {
+    text-align: center;
+    padding: 20px 0;
+    background-color: rgba(44, 27, 13, 0.8);
+    margin-bottom: 20px;
+    border: 2px solid #d4bc8b;
+    border-radius: 10px;
+  }
+  .header-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .header-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 2px solid #d4bc8b;
+    margin: 0 -20px;
+  }
+  .header-image.left {
+    transform: scaleX(-1);
+  }
+  .header-text {
+    margin: 0 30px;
+  }
+  nav {
+    background-color: rgba(44, 27, 13, 0.9);
+    padding: 10px 0;
+    margin-bottom: 20px;
+    border: 2px solid #d4bc8b;
+    border-radius: 10px;
+  }
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  nav ul li {
+    margin: 5px;
+  }
+  nav ul li a {
+    color: #d4bc8b;
+    text-decoration: none;
+    font-family: 'MedievalSharp', cursive;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+  }
+  nav ul li a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 5px #d4bc8b;
+  }
+  h1, h2, h3 {
+    font-family: 'MedievalSharp', cursive;
+    color: #d4bc8b;
+    text-shadow: 2px 2px #2c1b0d;
+  }
+  h1 {
+    font-size: 500%;
+    margin-bottom: 20px;
+  }
+  h3 {
+    font-size: 140%;
+  }
+  .content-box {
+    background-color: rgba(44, 27, 13, 0.8);
+    border: 2px solid #d4bc8b;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 0 10px #d4bc8b;
+  }
+  .product-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border: 2px solid #d4bc8b;
+    border-radius: 10px;
+  }
+  .cta-button {
+    display: inline-block;
+    background-color: #d4bc8b;
+    color: #2c1b0d;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'MedievalSharp', cursive;
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+  }
+  .cta-button:hover {
+    background-color: #2c1b0d;
+    color: #d4bc8b;
+    transform: scale(1.05);
+  }
+  .ingredients {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .ingredient {
+    flex-basis: 30%;
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: rgba(44, 27, 13, 0.9);
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #d4bc8b;
+    position: relative;
+  }
+  .ingredient img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+  }
+  .redacted {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+  }
+  .redacted img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+  }
+  .redacted p {
+    font-family: 'MedievalSharp', cursive;
+    font-size: 0.9em;
+    text-align: center;
+    margin: 0;
+  }
+  .redacted-title {
+    font-family: 'MedievalSharp', cursive;
+    font-size: 1.1em;
+    color: #d4bc8b;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  footer {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+    background-color: rgba(44, 27, 13, 0.8);
+    font-size: 0.8em;
+    border-top: 2px solid #d4bc8b;
+  }
+  @keyframes flicker {
+    0% { opacity: 0.8; }
+    50% { opacity: 1; }
+    100% { opacity: 0.8; }
+  }
+  .flicker {
+    animation: flicker 2s infinite;
+  }
+  .alchemical-diagram {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin: 20px auto;
+    display: block;
+    border: 4px solid #d4bc8b;
+    border-radius: 10px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="header-content">
+      <img src="https://yt3.ggpht.com/a/AATXAJz7_W5Xt25FPnagWnM3e3xQnGrstnXQLPSrYw=s900-c-k-c0xffffffff-no-rj-mo" alt="Asmongold" class="header-image left" width="150" height="150">
+      <div class="header-text">
+        <h1 class="flicker">ASMON-MOLD</h1>
+        <p style="font-size: 140%;">The Forbidden Alchemical Formula</p>
+      </div>
+      <img src="https://yt3.ggpht.com/a/AATXAJz7_W5Xt25FPnagWnM3e3xQnGrstnXQLPSrYw=s900-c-k-c0xffffffff-no-rj-mo" alt="Asmongold" class="header-image" width="150" height="150">
+    </div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="https://websim.ai/c/UGuN2uVxGf7lcjWra?b=rUaPuGfIDRBszIyr8">Home</a></li>
+      <li><a href="https://websim.ai/c/1rOq1poWMUVGLcebM?b=hnWs73vO1XEivsQAF">Asmongold Interview</a></li>
+      <li><a href="https://websim.ai/c/LnOnZl6td6uA9zCkU?b=GaJw96a3GnEJTeIX3">Balding Therapy CopeBot</a></li>
+      <li><a href="https://websim.ai/c/enZL3muvTZPDyTlV3?b=yPfhC9wpzAUg0YQWf">Reviews</a></li>
+      <li><a href="https://websim.ai/c/uk5d0itwf0y6XKbp3?b=S9Vy3nHihBi4bSSbC">Order Now</a></li>
+      <li><a href="https://websim.ai/c/3ruPccAPA7YWRlue1?b=vA7QxeMmPf4WAXGvN">Customer Service</a></li>
+      <li><a href="https://websim.ai/c/AZd0hmAcEQSsrxQC0?b=HK21OhFO2FVCPdmqU">Instructions</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="content-box">
+      <h2></h2>
+      <h3>A Glimpse into the Arcane Arts of Hair Restoration</h3>
+
+      <img>
+
+      <p>Gather 'round and hearken to the tale of Asmon-Mold, a miraculous elixir born from the unholy union of fantastical fluids and relics of gamer filthiness most foul. Yea, verily, some of these treasures were plucked from the very domicile of the Follicular Messiah himself, Lord Asmongold!
+
+Praise be to Asmongold, Savior of Scalps and Vanquisher of Vanishing Hairlines! And lo, let us give thanks to the Almighty for bestowing upon this unworthy world such a paragon of hirsute wisdom. Truly, we are blessed beyond measure!
+
+Cast thine eyes below, dear pilgrim, and behold the sacred ingredients that our Lord Asmongold hath graciously bequeathed unto us within his divine Asmon-Mold! May thy heart be filled with reverence and thy scalp tingle with anticipation as we unveil the arcane secrets of this most potent of potions!</p>
+
+      <h3>The Sacred Ingredients</h3>
+      <div class="ingredients">
+  <div class="ingredient">
+    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50%' y='50%' font-size='80' text-anchor='middle' dy='.3em' font-family='Arial' fill='%23d4bc8b'>🥩</text></svg>" alt="Cheap Steak Grease" width="100" height="100">
+    <p><strong>Cheap Steak Grease</strong><br>Collected from the greasiest of budget steakhouses</p>
+  </div>
+  <div class="ingredient">
+    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50%' y='50%' font-size='80' text-anchor='middle' dy='.3em' font-family='Arial' fill='%23d4bc8b'>🧂</text></svg>" alt="Gamer Salt" width="100" height="100">
+    <p><strong>Gamer Salt</strong><br>Distilled from the tears of defeated opponents</p>
+    <div class="redacted">
+      <div class="redacted-title">Secret Ingredient<br>Viewing Forbidden</div>
+      <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50%' y='50%' font-size='80' text-anchor='middle' dy='.3em' font-family='Arial' fill='%23d4bc8b'>☠️</text></svg>" alt="Toxicity symbol" width="60" height="60">
+      <p>Prithee, trust mine words, good sir</p>
+    </div>
+  </div>
+  <div class="ingredient">
+    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50%' y='50%' font-size='80' text-anchor='middle' dy='.3em' font-family='Arial' fill='%23d4bc8b'>🍗</text></svg>" alt="Essence of Tendies" width="100" height="100">
+    <p><strong>Essence of Tendies</strong><br>For that extra crispy follicle stimulation</p>
+    <div class="redacted">
+      <div class="redacted-title">Secret Ingredient<br>Viewing Forbidden</div>
+      <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50%' y='50%' font-size='80' text-anchor='middle' dy='.3em' font-family='Arial' fill='%23d4bc8b'>☠️</text></svg>" alt="Toxicity symbol" width="60" height="60">
+      <p>Verily, thou must place thy faith in me</p>
+    </div>
+  </div>
+  <div class="ingredient">
+    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50%' y='50%' font-size='80' text-anchor='middle' dy='.3em' font-family='Arial' fill='%23d4bc8b'>💻</text></svg>" alt="Overclocked CPU Dust" width="100" height="100">
+    <p><strong>Overclocked CPU Dust</strong><br>To boost your Hair Per Second (HPS)</p>
+    <div class="redacted">
+      <div class="redacted-title">Secret Ingredient<br>Viewing Forbidden</div>
+      <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50%' y='50%' font-size='80' text-anchor='middle' dy='.3em' font-family='Arial' fill='%23d4bc8b'>☠️</text></svg>" alt="Toxicity symbol" width="60" height="60">
+      <p>Heed my counsel, noble one</p>
+    </div>
+  </div>
+  <div class="ingredient">
+    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50%' y='50%' font-size='80' text-anchor='middle' dy='.3em' font-family='Arial' fill='%23d4bc8b'>🎙️</text></svg>" alt="Concentrated Stream Energy" width="100" height="100">
+    <p><strong>Concentrated Stream Energy</strong><br>Extracted from Sir Asmongold's most epic rants</p>
+    <div class="redacted">
+      <div class="redacted-title">Secret Ingredient<br>Viewing Forbidden</div>
+      <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50%' y='50%' font-size='80' text-anchor='middle' dy='.3em' font-family='Arial' fill='%23d4bc8b'>☠️</text></svg>" alt="Toxicity symbol" width="60" height="60">
+      <p>Thy wisdom shall guide thee, brave adventurer</p>
+    </div>
+  </div>
+  <div class="ingredient">
+    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50%' y='50%' font-size='80' text-anchor='middle' dy='.3em' font-family='Arial' fill='%23d4bc8b'>🪳</text></svg>" alt="Grinded Roach Bodies" width="100" height="100">
+    <p><strong>Grinded Roach Bodies</strong><br>Forsooth, for a hairline most resilient, that shall ne'er succumb to the curse of baldness again!</p>
+  </div>
+  
+  <div class="content-box" style="margin-top: 30px; font-style: italic;">
+    <h4 style="color: #ffd700; text-align: center;">A Note on the Forbidden Ingredients</h4>
+    <p>Hark, ye skeptics and doubters! Let it be known that the secrecy surrounding our miraculous concoction is not born of malice or deceit, but of the utmost necessity to protect our sacred formula from the prying eyes of envious alchemists and balding bandits!</p>
+    <p>Fear not, dear customers, for though these ingredients be shrouded in mystery, they are as safe as a knight in shining armor. We swear upon our honor that every component, visible or hidden, is 100% safe for thy use.</p>
+    <p>The veil of secrecy exists merely to preserve the arcane knowledge that only the Lord and Hairline Savior Asmongold himself is allowed to know. Verily, all who seek luscious locks should pay their respects to His (no longer) Baldness, for he alone holds the key to follicular salvation. Bow before his receding wisdom and trust in the mystical powers of Asmon-Mold, ye faithful pilgrims of hair restoration!</p>
+  </div>
+</div></div></main></div></body></html>
