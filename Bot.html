@@ -199,23 +199,45 @@ const placeholders = [
   "You're still here...?"
 ];
 
+// Function to add a message to the chat box
 function addMessage(message, isUser) {
-  const messageDiv = document.createElement('div');
-  messageDiv.classList.add('message');
-  messageDiv.classList.add(isUser ? 'user-message' : 'bot-message');
-  messageDiv.textContent = message;
-  chatBox.appendChild(messageDiv);
-  chatBox.scrollTop = chatBox.scrollHeight;
+  try {
+    // Clear the chat box before adding new messages
+    chatBox.innerHTML = '';
+    const messageDiv = document.createElement('div');
+    messageDiv.classList.add('message');
+    messageDiv.classList.add(isUser ? 'user-message' : 'bot-message');
+    messageDiv.textContent = message;
+    chatBox.appendChild(messageDiv);
+    chatBox.scrollTop = chatBox.scrollHeight;
+  } catch (error) {
+    console.error('Error adding message to chat box:', error);
+  }
 }
 
+// Function to get a random insult
 function getRandomInsult() {
-  return insults[Math.floor(Math.random() * insults.length)];
+  try {
+    const insultIndex = Math.floor(Math.random() * insults.length);
+    return insults[insultIndex];
+  } catch (error) {
+    console.error('Error getting random insult:', error);
+    return '';
+  }
 }
 
+// Function to get a random placeholder
 function getRandomPlaceholder() {
-  return placeholders[Math.floor(Math.random() * placeholders.length)];
+  try {
+    const placeholderIndex = Math.floor(Math.random() * placeholders.length);
+    return placeholders[placeholderIndex];
+  } catch (error) {
+    console.error('Error getting random placeholder:', error);
+    return '';
+  }
 }
 
+// Add event listener to the form submission
 chatForm.addEventListener('submit', function(e) {
   e.preventDefault();
   const userMessage = userInput.value.trim();
@@ -232,7 +254,11 @@ chatForm.addEventListener('submit', function(e) {
 
 // Change placeholder every 5 seconds
 setInterval(() => {
-  userInput.placeholder = getRandomPlaceholder();
+  try {
+    userInput.placeholder = getRandomPlaceholder();
+  } catch (error) {
+    console.error('Error changing placeholder:', error);
+  }
 }, 5000);
 </script>
 </body>
