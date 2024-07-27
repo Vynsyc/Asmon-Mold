@@ -131,13 +131,13 @@
 
   <nav>
     <ul style="font-family: 'MedievalSharp', cursive;">
-  <li><a href="https://websim.ai/c/UGuN2uVxGf7lcjWra?b=rUaPuGfIDRBszIyr8" style="border: none; font-weight: 600; font-size: 1.21em;">Home</a></li>
-  <li><a href="https://websim.ai/c/9rGTFdoN3LR6BnIvh" style="border: none; font-weight: 600; font-size: 1.21em;">Asmongold Interview</a></li>
-  <li><a href="https://websim.ai/c/E1pxC6bJPDO1LTUq6?b=DntQM3L66nJowM81f" style="border: none; font-weight: 600; font-size: 1.21em;">Formula Overview</a></li>
-  <li><a href="https://websim.ai/c/nIWLg5eeUi3u7x3eN" style="border: none; font-weight: 600; font-size: 1.21em;">Reviews</a></li>
-  <li><a href="https://websim.ai/c/JhHWzfsARDV5gY9KR?b=MPv57egCmS6NUoHJs" style="border: none; font-weight: 600; font-size: 1.21em;">Order Now</a></li>
-  <li><a href="https://websim.ai/c/3ruPccAPA7YWRlue1?b=vA7QxeMmPf4WAXGvN" style="border: none; font-weight: 600; font-size: 1.21em;">Customer Service</a></li>
-  <li><a href="https://websim.ai/c/AZd0hmAcEQSsrxQC0?b=HK21OhFO2FVCPdmqU" style="border: none; font-weight: 600; font-size: 1.21em;">Instructions</a></li>
+  <li><a href="index.html" style="border: none; font-weight: 600; font-size: 1.21em;">Home</a></li>
+  <li><a href="Asmongold Interview.html" style="border: none; font-weight: 600; font-size: 1.21em;">Asmongold Interview</a></li>
+  <li><a href="Formula.html" style="border: none; font-weight: 600; font-size: 1.21em;">Formula Overview</a></li>
+  <li><a href="Reviews.html" style="border: none; font-weight: 600; font-size: 1.21em;">Reviews</a></li>
+  <li><a href="Order Now.html" style="border: none; font-weight: 600; font-size: 1.21em;">Order Now</a></li>
+  <li><a href="Customer Support.html" style="border: none; font-weight: 600; font-size: 1.21em;">Customer Service</a></li>
+  <li><a href="Instructions.html" style="border: none; font-weight: 600; font-size: 1.21em;">Instructions</a></li>
 </ul>
   </nav>
 
@@ -162,29 +162,41 @@ const chatForm = document.getElementById('chat-form');
 const userInput = document.getElementById('user-input');
 
 const insults = [
-  "Oh, look who decided to grace us with their presence. Did you polish your head before typing that nonsense?",
-  "Wow, that's almost as weak as your hair game. Got any other brilliant insights, chrome dome?",
-  "I'm surprised you could see the keyboard with all that glare from your forehead. Try again, baldy.",
-  "That's rich coming from someone who probably uses a lint roller as a hairbrush. What else you got?",
-  "I've seen more hair on a bowling ball than on your head. Is that really the best you can come up with?",
-  "Careful now, don't think too hard. We wouldn't want you to lose what little hair you have left from the stress.",
-  "Did you have to wipe the shine off your screen before reading that? Try harder, you follically challenged fool.",
-  "I bet you spent more time typing that than you do styling your non-existent hair in the morning.",
-  "Impressive. Your wit is almost as thin as your hair. Care to embarrass yourself further?",
-  "Wow, a response almost as smooth as your scalp. Got any more gems, Captain Cue Ball?"
+  "Hm. Well...did you polish your head today?",
+  "Oh, I know! Just buy a wig!",
+  "Please just shut up, I don't care...",
+  "Christ, you're still talking.",
+  "Get out, boomer.",
+  "I don't give a fuck about someone who probably uses a lint roller as a hairbrush.",
+  "I know I'm supposed to help your sorry ass, but, and don't take this personally...I'm all out of shits to give you.",
+  "Listen...we wouldn't want you to lose what little hair you have left from the stress, right? So I suggest buying some Asmon-mold and calling it a day.",
+  "You follically challenged fool. Stop being so cringe.",
+  "Just grow hair, 4head.",
+  "I see. Damn, you're screwed.",
+  "Have you tried rubbing Asmongold's forehead for good luck? Oh wait, you can just use your own. Sorry about that :p"
+  "Your issues are about as welcome as a comb in Asmongold's bathroom.",
+  "Maybe if you spent less time whining and more time embracing the bald life, you'd be happier.",
+  "Listen, dude...I'm not your therapist, I'm a reality check. And the reality is, you're hairline is dead and you are maidenless. And if you're not maidenless, you should be.",
+  "I'd rather watch paint dry than listen to your issues, chrome dome.",
+  "Ripbozo. Deal with it.",
+  "Big yikes, man! I almost gave a fuck! Damn, that was close...",
+  "...You being fr?.",
+  "No cap, I'm not here to help. I'm just here to roast your balding head, fam.",
+  "Bruh, you're really out here trying to get therapy from a bot? That's sadder than Asmongold's hairline, no cap.",
+  "RIPBOZO HAIRLINE! HAHAHAHHAHAHAHAHA! DECEASED SCALP-LOOKIN ASS, LMFAOOOOOOOOOO!!! Get some head, loser! What? Which head? Doesn't matter, man, you ain't gettin either one."
 ];
 
 const placeholders = [
-  "Type your pathetic excuse here...",
-  "Whine about your hairline here...",
-  "Cry about your bald spot here...",
-  "Complain about your receding hairline...",
-  "Moan about your thinning hair here...",
-  "Beg for hair growth tips here...",
-  "Lament your lost locks here...",
-  "Sob about your shiny dome here...",
-  "Grieve your vanishing hairline here...",
-  "Weep about your wispy strands here..."
+  "Type whatever here...",
+  "Shame I don't get paid for this...",
+  "Yawn...",
+  "Asmongold? More like Toothless from How To Train Your Dragon...",
+  "Blah, blah, blah. Moan, groan, moan, groan...",
+  "Tell me about your woes (not really)...",
+  "Lament your missing hairline here...",
+  "You done crying like a bitch yet...?",
+  "Have you ever heard the tragedy of Asmongold The Gooner? It's not a story Twitch streamers would tell you.",
+  "You're still here...?"
 ];
 
 function addMessage(message, isUser) {
