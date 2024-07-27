@@ -199,75 +199,41 @@ const placeholders = [
   "You're still here...?"
 ];
 
-// Module for chat functionality
-const chatModule = {
-  // Function to add a message to the chat box
-  addMessage: function(message, isUser) {
-    try {
-      // Clear the chat box before adding new messages
-      chatBox.innerHTML = '';
-      const messageDiv = document.createElement('div');
-      messageDiv.classList.add('message');
-      messageDiv.classList.add(isUser ? 'user-message' : 'bot-message');
-      messageDiv.textContent = message;
-      chatBox.appendChild(messageDiv);
-      chatBox.scrollTop = chatBox.scrollHeight;
-    } catch (error) {
-      console.error('Error adding message to chat box:', error);
-    }
-  },
+function addMessage(message, isUser) {
+  const messageDiv = document.createElement('div');
+  messageDiv.classList.add('message');
+  messageDiv.classList.add(isUser ? 'user-message' : '
+  bot-message');
+  messageDiv.textContent = message;
+  chatBox.appendChild(messageDiv);
+  chatBox.scrollTop = chatBox.scrollHeight;
+}
 
-  // Function to get a random insult
-  getRandomInsult: function() {
-    try {
-      const insultIndex = Math.floor(Math.random() * insults.length);
-      return insults[insultIndex];
-    } catch (error) {
-      console.error('Error getting random insult:', error);
-      return '';
-    }
-  },
+function getRandomInsult() {
+  return insults[Math.floor(Math.random() * insults.length)];
+}
 
-  // Function to get a random placeholder
-  getRandomPlaceholder: function() {
-    try {
-      const placeholderIndex = Math.floor(Math.random() * placeholders.length);
-      return placeholders[placeholderIndex];
-    } catch (error) {
-      console.error('Error getting random placeholder:', error);
-      return '';
-    }
+function getRandomPlaceholder() {
+  return placeholders[Math.floor(Math.random() * placeholders.length)];
+}
+
+chatForm.addEventListener('submit', function(e) {
+  e.preventDefault(); // Prevent the form from submitting and reloading the page
+  const userMessage = userInput.value.trim();
+  if (userMessage) {
+    addMessage(userMessage, true);
+    userInput.value = '';
+    setTimeout(() => {
+      const botResponse = getRandomInsult();
+      addMessage(botResponse, false);
+    }, 1000);
   }
-};
-
-// Module for form submission handling
-const formSubmissionModule = {
-  // Function to handle form submission
-  handleSubmit: function(e) {
-    e.preventDefault();
-    const userMessage = userInput.value.trim();
-    if (userMessage) {
-      chatModule.addMessage(userMessage, true);
-      userInput.value = '';
-      setTimeout(() => {
-        const botResponse = chatModule.getRandomInsult();
-        chatModule.addMessage(botResponse, false);
-      }, 1000);
-    }
-    userInput.placeholder = chatModule.getRandomPlaceholder();
-  }
-};
-
-// Add event listener to the form submission
-chatForm.addEventListener('submit', formSubmissionModule.handleSubmit);
+  userInput.placeholder = getRandomPlaceholder();
+});
 
 // Change placeholder every 5 seconds
 setInterval(() => {
-  try {
-    userInput.placeholder = chatModule.getRandomPlaceholder();
-  } catch (error) {
-    console.error('Error changing placeholder:', error);
-  }
+  userInput.placeholder = getRandomPlaceholder();
 }, 5000);
 </script>
 </body>
